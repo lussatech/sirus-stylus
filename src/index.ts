@@ -1,35 +1,29 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SampleComponent } from './sample.component';
-import { SampleDirective } from './sample.directive';
-import { SamplePipe } from './sample.pipe';
-import { SampleService } from './sample.service';
+import { StylusComponent } from './stylus.component';
+import { StylusService, StylusServiceProvider } from './stylus.service';
 
-export * from './sample.component';
-export * from './sample.directive';
-export * from './sample.pipe';
-export * from './sample.service';
+export * from './stylus.component';
+export * from './stylus.service';
 
 @NgModule({
   imports: [
     CommonModule
   ],
   declarations: [
-    SampleComponent,
-    SampleDirective,
-    SamplePipe
+    StylusComponent
   ],
   exports: [
-    SampleComponent,
-    SampleDirective,
-    SamplePipe
+    StylusComponent
   ]
 })
-export class SampleModule {
+export class SirusStylusModule {
   static forRoot(): ModuleWithProviders {
     return {
-      ngModule: SampleModule,
-      providers: [SampleService]
+      ngModule: SirusStylusModule,
+      providers: [
+        StylusServiceProvider
+      ]
     };
   }
 }

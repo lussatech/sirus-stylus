@@ -1,11 +1,12 @@
 # Node
 node_modules/*
+src/node_modules/*
 npm-debug.log
 
 # TypeScript
-src/*.js
-src/*.map
-src/*.d.ts
+src/**/*.js
+src/**/*.map
+src/**/*.d.ts
 
 # JetBrains
 .idea
