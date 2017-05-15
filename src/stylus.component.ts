@@ -16,15 +16,16 @@ import {
 	Protocol,
 	PenParametersInput,
 	InkChangeData
-} from './lib/myScript';
+} from './lib/myScript/index';
 
 import {
 	StylusService
 } from './stylus.service'
 
 @Component({
-	selector: 'rm-stylus',
+	selector: 'sirus-stylus',
 	templateUrl: './stylus.html',
+	styleUrls: [ './stylus.component.scss' ]
 })
 export class StylusComponent implements OnInit, AfterViewInit, Input, Output {
 	private _paper: InkPaper;

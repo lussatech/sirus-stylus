@@ -10,8 +10,8 @@ import { TextRecognitionInput } from '../input/text/textRecognitionInput';
 import { TextRecognitionData } from '../input/text/textRecognitionData';
 import { TextResult } from '../output/text/textResult';
 
-import Q from 'q';
-import CryptoJS from 'crypto-js';
+import * as Q from 'q';
+import * as CryptoJS from 'crypto-js';
 
 /**
  * Abstract recognizer interface

@@ -7,7 +7,7 @@ import { ChallengeRequestWSMessage } from '../input/generic/challengeRequestWSMe
 import { ResetRequestWSMessage } from '../input/generic/resetRequestWSMessage';
 import { StrokeComponent } from '../input/generic/components/strokeComponent';
 
-import CryptoJS from 'crypto-js';
+import * as CryptoJS from 'crypto-js';
 
 export abstract class AbstractWSRecognizer {
 	_wsInterface: NetworkWSInterface;

@@ -19,9 +19,9 @@
   "module": "sirus-stylus.js",
   "typings": "sirus-stylus.d.ts",
   "dependencies": {
-    "@types/cryptojs": "^3.1.29",
+    "@types/crypto-js": "^3.1.33",
     "@types/q": "^1.0.0",
-    "cryptojs": "^2.5.3",
+    "crypto-js": "^3.1.4",
     "q": "^1.5.0"
   },
   "peerDependencies": {

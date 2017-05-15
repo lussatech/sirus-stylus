@@ -1,4 +1,4 @@
-import Q from 'q';
+import * as Q from 'q';
 
 /**
  * Network interface

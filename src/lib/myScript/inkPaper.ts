@@ -2,7 +2,7 @@ import {
 	RecognitionType,
 	Protocol,
 	Point,
-} from './MyScript'
+} from './index';
 
 import { PenParameters } from './common/penParameters';
 
@@ -20,7 +20,25 @@ import { AbstractRenderer } from './rendering/abstractRenderer';
 import { TextRenderer } from './rendering/textRenderer';
 import { ImageRenderer } from './rendering/imageRenderer';
 
-import Q from 'q';
+import * as Q from 'q';
+
+const captureCanvasStyles = {
+	position: 'absolute',
+	height: '100%',
+	width: '100%',
+	'z-index': 1,
+	top: 0,
+	right: 0
+};
+
+const renderingCanvasStyles = {
+	position: 'absolute',
+	height: '100%',
+	width: '100%',
+	'z-index': 1,
+	top: 0,
+	right: 0
+};
 
 export interface InkPaperOptions {
 	applicationKey: string;
@@ -114,12 +132,14 @@ export class InkPaper {
 		this.canvasRatio = InkPaper.getCanvasRatio(tempCanvas);
 		element.removeChild(tempCanvas); //this.canvasRatio = 1;
 
-		this._captureCanvas = InkPaper.createCanvas(element, 'ms-capture-canvas');
+		this._captureCanvas = InkPaper.createCanvas(element, 'ms-capture-canvas', 
+			captureCanvasStyles);
 
 		this._inkGrabber = new InkGrabber(this._captureCanvas.getContext('2d'));
 
 		// Rendering
-		this._renderingCanvas = InkPaper.createCanvas(element, 'ms-rendering-canvas');
+		this._renderingCanvas = InkPaper.createCanvas(element, 'ms-rendering-canvas', 
+			renderingCanvasStyles);
 		this._textRenderer = new TextRenderer(this._renderingCanvas.getContext('2d'));
 
 		// Recognition
@@ -1074,10 +1094,17 @@ export class InkPaper {
 	 * @param {String} id
 	 * @returns {Element}
 	 */
-	static createCanvas(parent: HTMLElement, id: string): HTMLCanvasElement {
+	static createCanvas(parent: HTMLElement, id: string, styles?: Object): HTMLCanvasElement {
 		let count = document.querySelectorAll('canvas[id^=' + id + ']').length;
 		let canvas = document.createElement('canvas');
 		canvas.id = id + '-' + count;
+		if(styles){
+			for(let key in styles){
+				if(styles.hasOwnProperty(key)){
+					canvas.style[key] = styles[key];
+				}
+			}
+		}
 		parent.appendChild(canvas);
 		return canvas;
 	}

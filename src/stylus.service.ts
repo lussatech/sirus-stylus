@@ -8,10 +8,3 @@ export class StylusService {
     readonly host?: string
   ) {}
 }
-
-export let StylusServiceProvider = { 
-    provide: StylusService,
-    useFactory: (applicationKey: string, hmacKey: string, host?: string) => {
-      return new StylusService(applicationKey, hmacKey, host);
-    }
-  };

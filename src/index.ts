@@ -1,10 +1,11 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StylusComponent } from './stylus.component';
-import { StylusService, StylusServiceProvider } from './stylus.service';
+import { StylusService } from './stylus.service';
 
 export * from './stylus.component';
 export * from './stylus.service';
+export * from './lib/myScript/index';
 
 @NgModule({
   imports: [
@@ -18,11 +19,16 @@ export * from './stylus.service';
   ]
 })
 export class SirusStylusModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(applicationKey: string, hmacKey: string, host?: string): ModuleWithProviders {
     return {
       ngModule: SirusStylusModule,
       providers: [
-        StylusServiceProvider
+        {
+          provide: StylusService,
+          useFactory: () => {
+            return new StylusService(applicationKey, hmacKey, host);
+          }
+        }
       ]
     };
   }
