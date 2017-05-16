@@ -22,29 +22,99 @@ import {
 	StylusService
 } from './stylus.service'
 
+/**
+ * Component to writing using stylus
+ * this component will automatically translate user writing into text
+ * 
+ * @export
+ * @class StylusComponent
+ * @implements {OnInit}
+ * @implements {AfterViewInit}
+ * @implements {Input}
+ * @implements {Output}
+ */
 @Component({
 	selector: 'sirus-stylus',
-	templateUrl: './stylus.html',
+	templateUrl: './stylus.component.html',
 	styleUrls: [ './stylus.component.scss' ]
 })
 export class StylusComponent implements OnInit, AfterViewInit, Input, Output {
 	private _paper: InkPaper;
 	private _options: InkPaperOptions;
 
+	/**
+	 * Pen Parameters
+	 * 
+	 * @type {PenParametersInput}
+	 * @memberof StylusComponent
+	 */
 	@Input() pen: PenParametersInput;
+
+	/**
+	 * Width of the component
+	 * 
+	 * @type {number}
+	 * @memberof StylusComponent
+	 */
 	@Input() width: number = 400;
+
+	/**
+	 * Height of the component
+	 * 
+	 * @type {number}
+	 * @memberof StylusComponent
+	 */
 	@Input() height: number = 300;
+
+	/**
+	 * timeout in `ms` for stylus before making recognition attempt
+	 * 
+	 * @type {number}
+	 * @memberof StylusComponent
+	 */
 	@Input() timeout: number = 25;
+
+	/**
+	 * languange to recognize
+	 * 
+	 * @type {string}
+	 * @memberof StylusComponent
+	 */
 	@Input() language: string = 'en_US';
 
-	@Output() onResult = new EventEmitter<string>();
-	@Output() onInkChange = new EventEmitter<InkChangeData>();
-	@Output() onError = new EventEmitter<string | Error>();
+	/**
+	 * callback when reconition result received
+	 * 
+	 * @type {EventEmitter<string>}
+	 * @memberof StylusComponent
+	 */
+	@Output() onResult: EventEmitter<string> = new EventEmitter<string>();
+
+	/**
+	 * callback each time user making writing on stylus
+	 * 
+	 * @type {EventEmitter<InkChangeData>}
+	 * @memberof StylusComponent
+	 */
+	@Output() onInkChange: EventEmitter<InkChangeData> = new EventEmitter<InkChangeData>();
+
+	/**
+	 * callback when error happen
+	 * 
+	 * @type {(EventEmitter<string | Error>)}
+	 * @memberof StylusComponent
+	 */
+	@Output() onError: EventEmitter<string | Error> = new EventEmitter<string | Error>();
 
 	@ViewChild('inkPaper') container: ElementRef;
 
 	constructor(private stylusService: StylusService) { }
 
+	/**
+	 * Init options for stylus components
+	 * 
+	 * @memberof StylusComponent
+	 */
 	ngOnInit() {
 		this._options = <InkPaperOptions>{
 			host:  this.stylusService.host || "webdemoapi.myscript.com",
@@ -66,6 +136,12 @@ export class StylusComponent implements OnInit, AfterViewInit, Input, Output {
 		};
 	}
 
+	/**
+	 * Create InkPaper for capture & rendering stylus ink
+	 * Attarch `result`, `change` and `error` callback to it
+	 * 
+	 * @memberof StylusComponent
+	 */
 	ngAfterViewInit() {
 		let element = this.container.nativeElement;
 		element.style.height = this._options.height + 'px';
@@ -90,14 +166,29 @@ export class StylusComponent implements OnInit, AfterViewInit, Input, Output {
 		});
 	}
 
+	/**
+	 * Clear stylus
+	 * 
+	 * @memberof StylusComponent
+	 */
 	clear() {
 		this._paper.clear();
 	}
 
+	/**
+	 * Undo last edit on stylus
+	 * 
+	 * @memberof StylusComponent
+	 */
 	undo() {
 		this._paper.undo();
 	}
 
+	/**
+	 * Redo last undoing on stylus
+	 * 
+	 * @memberof StylusComponent
+	 */
 	redo() {
 		this._paper.redo();
 	}

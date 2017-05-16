@@ -7,6 +7,31 @@ export * from './stylus.component';
 export * from './stylus.service';
 export * from './lib/myScript/index';
 
+/**
+ * Stylus top level module
+ * Use it to configure your `MyScript` service credentials, On yout `root` module
+ * 
+ * @export
+ * @class SirusStylusModule
+ * 
+ * @example
+ * 
+ * ```typescript
+ *  import { SirusStylusModule } from '@sirus/stylus';
+ * 
+ *  @NgModule({
+ *    imports: [
+ *      SirusStylusModule.forRoot(
+ *        'APPLICATION_KEY',
+ *        'HMAC_KEY',
+ *        'HOST' // default to webdemoapi.myscript.com
+ *      )
+ *    ]
+ *  })
+ *  export class AppModule { }
+ *  ```
+ * 
+ */
 @NgModule({
   imports: [
     CommonModule

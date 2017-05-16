@@ -5,52 +5,45 @@
 To install this library, run:
 
 ```bash
-$ npm install sirus-stylus --save
+$ npm install @sirus/stylus --save
 ```
 
-## Consuming your library
+## Usage
 
-Once you have published your library to npm, you can import your library in any Angular application by running:
+Once you have published your library to npm, you can import this module in any Angular application by running:
 
 ```bash
-$ npm install sirus-stylus
+$ npm install @sirus/stylus
 ```
 
 and then from your Angular `AppModule`:
 
 ```typescript
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-import { AppComponent } from './app.component';
-
-// Import your library
-import { SampleModule } from 'sirus-stylus';
+import { SirusStylusModule } from '@sirus/stylus';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
   imports: [
-    BrowserModule,
-
-    // Specify your library as an import
-    LibraryModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    SirusStylusModule.forRoot(
+      'APPLICATION_KEY',
+      'HMAC_KEY',
+      'HOST' // default to webdemoapi.myscript.com
+    )
+  ]
 })
 export class AppModule { }
 ```
 
-Once your library is imported, you can use its components, directives and pipes in your Angular application:
+Then from your application template, you can start using `stylus` component
 
 ```xml
-<!-- You can now use your library component in app.component.html -->
-<h1>
-  {{title}}
-</h1>
-<sampleComponent></sampleComponent>
+<sirus-stylus
+  [pen]="pen" 
+  height="200" 
+  width="270" 
+  language="id_ID" 
+  (onResult)="writeRecognition($event)"
+  (onInkChange)="inkChange($event)">
+</sirus-stylus>
 ```
 
 ## Development

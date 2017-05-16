@@ -64,6 +64,12 @@ export interface InkChangeData {
 	redoLength: number;
 }
 
+/**
+ * Paper to make writing
+ * 
+ * @export
+ * @class InkPaper
+ */
 export class InkPaper {
 
 	private options: InkPaperOptions;
@@ -105,6 +111,14 @@ export class InkPaper {
 
 	canvasRatio: number;
 
+	/**
+	 * Creates an instance of InkPaper.
+	 * @param {HTMLElement} element 
+	 * @param {InkPaperOptions} [options] 
+	 * @param {((data?, error?) => any | void)} [callback] 
+	 * 
+	 * @memberof InkPaper
+	 */
 	constructor(
 		element: HTMLElement,
 		options?: InkPaperOptions,
