@@ -1,5 +1,7 @@
 # sirus-stylus
 
+Stylus input text recognition module for angular
+
 ## Installation
 
 To install this library, run:
