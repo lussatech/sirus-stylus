@@ -2,6 +2,8 @@
 
 Stylus input text recognition module for angular
 
+![stylus demo](https://cloud.githubusercontent.com/assets/9798995/26132775/b141a7d4-3acc-11e7-8a04-1672f4bc33ea.gif)
+
 ## Installation
 
 To install this library, run:
@@ -18,7 +20,7 @@ Once you have published your library to npm, you can import this module in any A
 $ npm install @sirus/stylus
 ```
 
-and then from your Angular `AppModule`:
+and then from your Angular `AppModule` add your [myScript](http://doc.myscript.com/MyScriptCloud/3.2.0/myscript-web/text.html#mandatory-parameters) application key & hmac key:
 
 ```typescript
 import { SirusStylusModule } from '@sirus/stylus';

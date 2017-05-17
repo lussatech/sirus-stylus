@@ -13,24 +13,6 @@ export * from './lib/myScript/index';
  * 
  * @export
  * @class SirusStylusModule
- * 
- * @example
- * 
- * ```typescript
- *  import { SirusStylusModule } from '@sirus/stylus';
- * 
- *  @NgModule({
- *    imports: [
- *      SirusStylusModule.forRoot(
- *        'APPLICATION_KEY',
- *        'HMAC_KEY',
- *        'HOST' // default to webdemoapi.myscript.com
- *      )
- *    ]
- *  })
- *  export class AppModule { }
- *  ```
- * 
  */
 @NgModule({
   imports: [
