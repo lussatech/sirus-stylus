@@ -32,6 +32,18 @@ import {
  * @implements {AfterViewInit}
  * @implements {Input}
  * @implements {Output}
+ * 
+ * @example
+ * <sirus-stylus
+ * 	[pen]="pen"
+ * 	width="300"
+ * 	height="300"
+ * 	timeout="20"
+ * 	language="id_ID"
+ * 	(onResult)="resultCallback($event)"
+ * 	(onInkChange)="changeCallback($event)"
+ * 	(onError)="errorCallback($event)">
+ * </sirus-stylus>
  */
 @Component({
 	selector: 'sirus-stylus',

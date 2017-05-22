@@ -28,7 +28,8 @@ const captureCanvasStyles = {
 	width: '100%',
 	'z-index': 1,
 	top: 0,
-	right: 0
+	right: 0,
+	'touch-action': 'none'
 };
 
 const renderingCanvasStyles = {
@@ -37,7 +38,8 @@ const renderingCanvasStyles = {
 	width: '100%',
 	'z-index': 1,
 	top: 0,
-	right: 0
+	right: 0,
+	'touch-action': 'none'
 };
 
 export interface InkPaperOptions {
@@ -453,10 +455,6 @@ export class InkPaper {
 	 */
 	setTypeset(typeset: boolean) {
 		this._textRenderer.setTypeset(typeset);
-		// this._mathRenderer.setTypeset(typeset);
-		// this._shapeRenderer.setTypeset(typeset);
-		// this._musicRenderer.setTypeset(typeset);
-		// this._analyzerRenderer.setTypeset(typeset);
 	};
 
 	/**
@@ -744,8 +742,6 @@ export class InkPaper {
 			this._onChange();
 		}
 
-		console.log(this.canvasRatio);
-
 		this._inkGrabber.startCapture(x, y, t);
 	};
 
@@ -858,8 +854,7 @@ export class InkPaper {
 			e.preventDefault();
 			e.stopPropagation();
 			return false;
-		}
-		);
+		});
 
 		element.addEventListener('pointerdown', function (e) {
 			if (!pointerId) {

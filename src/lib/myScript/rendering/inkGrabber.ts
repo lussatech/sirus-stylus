@@ -59,14 +59,6 @@ export class InkGrabber extends AbstractRenderer {
 			this.clear();
 			this.drawComponent(this.stroke);
 			this.writing = false;
-			console.log(
-				JSON.stringify(this.stroke.getX()),
-				JSON.stringify(this.stroke.getY()),
-				JSON.stringify(this.stroke.getT()),
-				JSON.stringify(this.stroke.getP()),
-				JSON.stringify(this.stroke.getL()),
-				JSON.stringify(this.stroke.getD()),
-			);
 		} else {
 			throw new Error('Missing startInkCapture');
 		}

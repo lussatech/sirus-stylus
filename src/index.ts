@@ -13,24 +13,6 @@ export * from './lib/myScript/index';
  * 
  * @export
  * @class SirusStylusModule
- * 
- * @example
- * 
- * ```typescript
- *  import { SirusStylusModule } from '@sirus/stylus';
- * 
- *  @NgModule({
- *    imports: [
- *      SirusStylusModule.forRoot(
- *        'APPLICATION_KEY',
- *        'HMAC_KEY',
- *        'HOST' // default to webdemoapi.myscript.com
- *      )
- *    ]
- *  })
- *  export class AppModule { }
- *  ```
- * 
  */
 @NgModule({
   imports: [
@@ -44,6 +26,18 @@ export * from './lib/myScript/index';
   ]
 })
 export class SirusStylusModule {
+
+  /**
+   * Configure stylus service for root module
+   * 
+   * @static
+   * @param {string} applicationKey myscript application key
+   * @param {string} hmacKey myscript hmac key
+   * @param {string} [host] host location / address
+   * @returns {ModuleWithProviders} 
+   * 
+   * @memberof SirusStylusModule
+   */
   static forRoot(applicationKey: string, hmacKey: string, host?: string): ModuleWithProviders {
     return {
       ngModule: SirusStylusModule,
