@@ -22,25 +22,21 @@
 <text text-anchor="start" x="429.7258" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Exports</text>
 <g id="clust1" class="cluster">
 <title>cluster_SirusStylusModule</title>
-<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="106,-70 106,-268 390,-268 390,-70 106,-70"/>
+<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="172,-70 172,-268 324,-268 324,-70 172,-70"/>
 </g>
-<g id="clust2" class="cluster">
-<title>cluster_SirusStylusModule_declarations</title>
-<polygon fill="none" stroke="#000000" points="250,-78 250,-130 382,-130 382,-78 250,-78"/>
+<g id="clust3" class="cluster">
+<title>cluster_SirusStylusModule_imports</title>
+<polygon fill="none" stroke="#000000" points="184,-78 184,-130 312,-130 312,-78 184,-78"/>
 </g>
 <g id="clust4" class="cluster">
-<title>cluster_SirusStylusModule_imports</title>
-<polygon fill="none" stroke="#000000" points="114,-78 114,-130 242,-130 242,-78 114,-78"/>
-</g>
-<g id="clust5" class="cluster">
 <title>cluster_SirusStylusModule_exports</title>
 <polygon fill="none" stroke="#000000" points="180,-208 180,-260 316,-260 316,-208 180,-208"/>
 </g>
-<!-- StylusComponent -->
+<!-- CommonModule -->
 <g id="node1" class="node">
-<title>StylusComponent</title>
-<polygon fill="#ffffb3" stroke="#000000" points="374.3413,-122 257.6587,-122 257.6587,-86 374.3413,-86 374.3413,-122"/>
-<text text-anchor="middle" x="316" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">StylusComponent</text>
+<title>CommonModule</title>
+<polygon fill="#8dd3c7" stroke="#000000" points="303.6681,-122 300.6681,-126 279.6681,-126 276.6681,-122 192.3319,-122 192.3319,-86 303.6681,-86 303.6681,-122"/>
+<text text-anchor="middle" x="248" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">CommonModule</text>
 </g>
 <!-- SirusStylusModule -->
 <g id="node2" class="node">
@@ -48,35 +44,23 @@
 <polygon fill="#8dd3c7" stroke="#000000" points="309.8371,-187 306.8371,-191 285.8371,-191 282.8371,-187 186.1629,-187 186.1629,-151 309.8371,-151 309.8371,-187"/>
 <text text-anchor="middle" x="248" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">SirusStylusModule</text>
 </g>
-<!-- StylusComponent&#45;&gt;SirusStylusModule -->
+<!-- CommonModule&#45;&gt;SirusStylusModule -->
 <g id="edge1" class="edge">
-<title>StylusComponent&#45;&gt;SirusStylusModule</title>
-<path fill="none" stroke="#000000" d="M283.749,-122.1061C283.749,-122.1061 283.749,-140.991 283.749,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="280.249,-140.9909 283.749,-150.991 287.249,-140.991 280.249,-140.9909"/>
+<title>CommonModule&#45;&gt;SirusStylusModule</title>
+<path fill="none" stroke="#000000" d="M248,-122.1061C248,-122.1061 248,-140.991 248,-140.991"/>
+<polygon fill="#000000" stroke="#000000" points="244.5001,-140.9909 248,-150.991 251.5001,-140.991 244.5001,-140.9909"/>
 </g>
 <!-- StylusComponent  -->
-<g id="node4" class="node">
+<g id="node3" class="node">
 <title>StylusComponent </title>
 <polygon fill="#fb8072" stroke="#000000" points="307.8409,-252 188.1591,-252 188.1591,-216 307.8409,-216 307.8409,-252"/>
 <text text-anchor="middle" x="248" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">StylusComponent </text>
 </g>
 <!-- SirusStylusModule&#45;&gt;StylusComponent  -->
-<g id="edge3" class="edge">
+<g id="edge2" class="edge">
 <title>SirusStylusModule&#45;&gt;StylusComponent </title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M248,-187.1061C248,-187.1061 248,-205.991 248,-205.991"/>
 <polygon fill="#000000" stroke="#000000" points="244.5001,-205.9909 248,-215.991 251.5001,-205.991 244.5001,-205.9909"/>
-</g>
-<!-- CommonModule -->
-<g id="node3" class="node">
-<title>CommonModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="233.6681,-122 230.6681,-126 209.6681,-126 206.6681,-122 122.3319,-122 122.3319,-86 233.6681,-86 233.6681,-122"/>
-<text text-anchor="middle" x="178" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">CommonModule</text>
-</g>
-<!-- CommonModule&#45;&gt;SirusStylusModule -->
-<g id="edge2" class="edge">
-<title>CommonModule&#45;&gt;SirusStylusModule</title>
-<path fill="none" stroke="#000000" d="M210.0828,-122.1061C210.0828,-122.1061 210.0828,-140.991 210.0828,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="206.5828,-140.9909 210.0828,-150.991 213.5828,-140.991 206.5828,-140.9909"/>
 </g>
 </g>
 </svg>

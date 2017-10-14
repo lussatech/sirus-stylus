@@ -51,8 +51,15 @@ import {
 	styleUrls: [ './stylus.component.scss' ]
 })
 export class StylusComponent implements OnInit, AfterViewInit, Input, Output {
-	private _paper: InkPaper;
 	private _options: InkPaperOptions;
+	
+	/**
+	 * Paper to render ink
+	 * 
+	 * @type {InkPaper}
+	 * @memberof StylusComponent
+	 */
+	paper: InkPaper;
 
 	/**
 	 * Pen Parameters
@@ -159,9 +166,9 @@ export class StylusComponent implements OnInit, AfterViewInit, Input, Output {
 		element.style.height = this._options.height + 'px';
 		element.style.width = this._options.width + 'px';
 
-		this._paper = new InkPaper(element, this._options);
+		this.paper = new InkPaper(element, this._options);
 
-		this._paper.setResultCallback((data, error) => {
+		this.paper.setResultCallback((data, error) => {
 			if (error) return this.onError.emit(error);
 			let text = '';
 			if (data) {
@@ -173,7 +180,7 @@ export class StylusComponent implements OnInit, AfterViewInit, Input, Output {
 		});
 
 		// set change callback
-		this._paper.setChangeCallback(change => {
+		this.paper.setChangeCallback(change => {
 			this.onInkChange.emit(change);
 		});
 	}
@@ -184,7 +191,7 @@ export class StylusComponent implements OnInit, AfterViewInit, Input, Output {
 	 * @memberof StylusComponent
 	 */
 	clear() {
-		this._paper.clear();
+		this.paper.clear();
 	}
 
 	/**
@@ -193,7 +200,7 @@ export class StylusComponent implements OnInit, AfterViewInit, Input, Output {
 	 * @memberof StylusComponent
 	 */
 	undo() {
-		this._paper.undo();
+		this.paper.undo();
 	}
 
 	/**
@@ -202,6 +209,6 @@ export class StylusComponent implements OnInit, AfterViewInit, Input, Output {
 	 * @memberof StylusComponent
 	 */
 	redo() {
-		this._paper.redo();
+		this.paper.redo();
 	}
 }
